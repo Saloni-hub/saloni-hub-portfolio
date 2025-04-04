@@ -21,7 +21,7 @@ export default function About() {
           <p className="mt-2 text-white/60">Frontend Developer</p>
           <p className="mt-4 text-lg text-white/80">
             I am a passionate Frontend Developer with a strong background in
-            Computer Science. With over 4 years of professional experience, I
+            Computer Science. With over 3.6 years of professional experience, I
             specialize in creating user-friendly, visually appealing, and
             responsive web applications. My expertise lies in technologies such
             as React, Next.js, and various frontend frameworks.

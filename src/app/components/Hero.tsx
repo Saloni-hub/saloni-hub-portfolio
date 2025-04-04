@@ -56,7 +56,7 @@ export default function Hero() {
               ))}
             </div>
             <div className="text-white/60">
-              <span className="text-white font-bold">4+ Years</span> Experience
+              <span className="text-white font-bold">3+ Years</span> Experience
             </div>
           </div>
           <div className="flex gap-4 mt-6">
