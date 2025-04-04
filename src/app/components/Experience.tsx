@@ -18,7 +18,7 @@ const experiences = [
     title: 'SDE-1',
     company: 'Locofast',
     location: 'Delhi',
-    period: 'Jan 2021 – March 2023',
+    period: 'Sep 2021 – March 2023',
     achievements: [
       'Implementation of design and ensuring user-friendly, visually appealing, and responsive application',
       'Collaboration with colleagues and guide them to achieve the best performance of application',
@@ -30,7 +30,7 @@ const experiences = [
     title: 'Mentor',
     company: 'Newton School',
     location: 'Remote',
-    period: 'May 2022 – Dec 2022',
+    period: 'March 2022 – Dec 2022',
     achievements: [
       'Mentored 15 students in front-end development, guiding them through hands-on coding projects',
       'Directed daily problem-solving sessions, resolving an average of 5+ operational issues per day'
