@@ -19,6 +19,14 @@ const certificates = [
   {
     title: 'Certificate of Achievement',
     issuer: 'Locofast'
+  },
+    {
+    title: 'Spot Award',
+    issuer: 'To The New'
+  },
+  {
+    title: 'Q3 Customer Championship Award',
+    issuer: 'To The New'
   }
 ]
 

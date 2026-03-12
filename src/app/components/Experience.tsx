@@ -3,11 +3,23 @@
 import { motion } from 'framer-motion'
 
 const experiences = [
+   {
+    title: 'Senior Software Engineer',
+    company: 'To The New',
+    location: 'Noida, U.P',
+    period: 'July 2025 – Present',
+    achievements: [
+      'Developing scalable frontend modules for the enterprise tax platform Navigate WHT for client PwC using React.js, Redux and modern JavaScript.',
+      'Built reusable component libraries and optimized rendering performance, improving UI responsiveness across complex data-heavy workflows.',
+      'Collaborated with backend engineers, product managers and QA teams to deliver production-ready features in an agile environment.',
+      'Enhanced application performance and maintainability through modular architecture and best frontend engineering practices.'
+    ]
+  },
   {
     title: 'Frontend Developer',
     company: 'Vision IAS',
     location: 'Noida, U.P',
-    period: 'March 2023 – Present',
+    period: 'March 2023 – June 2025',
     achievements: [
       'Designed a front-end interface using HTML, CSS, and JavaScript',
       'Developed a Google login and signup form, integrating OAuth 2.0 for secure authentication',
