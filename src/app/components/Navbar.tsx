@@ -71,15 +71,21 @@ export default function Navbar() {
     >
       <div className="mx-5 px-4">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-2xl font-bold text-[#FF6B00]">
-            <Image
-              src="/logo.webp"
-              width="40"
-              height="40"
-              alt="logo"
-              className="h-full w-full rounded-full object-cover"
-            />
-          </Link>
+         <Link
+  href="/"
+  className="flex items-center gap-2 text-2xl font-bold text-[#FF6B00]"
+>
+  <div className="w-10 h-10 relative">
+    <Image
+      src="/logo.webp"
+      fill
+      alt="Saloni Pandey Logo"
+      className="rounded-full object-cover"
+      priority
+    />
+  </div>
+
+</Link>
 
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (

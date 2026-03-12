@@ -1,51 +1,35 @@
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { NextResponse } from 'next/server'
+import { Resend } from 'resend'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(req: Request) {
   try {
-    console.log("Received contact request");
-    const { name, email, message } = await req.json();
-    
-    console.log({ name, email, message });
+    const { name, email, message } = await req.json()
 
     if (!name || !email || !message) {
-      console.error('Validation failed: Missing fields');
-      return NextResponse.json({ error: 'All fields are required' }, { status: 400 });
+      return NextResponse.json(
+        { error: 'All fields are required' },
+        { status: 400 }
+      )
     }
 
-    console.log('Creating transporter...');
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: 'pandeysaloni4july@gmail.com',
-        pass: process.env.EMAIL_PASSWORD
-      }
-    });
-
-    console.log('Transporter created');
-
-    const mailOptions = {
-      from: 'pandeysaloni4july@gmail.com',
-      to: '"Saloni Pandey" <pandeysaloni4july@gmail.com>',
-      subject: `New Contact Form Submission from ${name}`,
-      text: `
-        Name: ${name}
-        Email: ${email}
-        Message: ${message}
+    const data = await resend.emails.send({
+      from: 'Portfolio <onboarding@resend.dev>',
+      to: ['pandeysaloni4july@gmail.com'],
+      subject: `New message from ${name}`,
+      html: `
+        <h3>New Contact Message</h3>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Message:</b> ${message}</p>
       `
-    };
+    })
 
-    console.log('Sending email...');
-    await transporter.sendMail(mailOptions);
+    return NextResponse.json({ success: true, data })
 
-    console.log('Email sent successfully');
-    return NextResponse.json({ message: 'Email sent successfully' }, { status: 200 });
   } catch (error) {
-    console.error('Error in contact API:', error);
-    if (error instanceof Error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    }
-    return NextResponse.json({ error: 'An unexpected error occurred' }, { status: 500 });
+    console.error(error)
+    return NextResponse.json({ error: 'Failed to send email' }, { status: 500 })
   }
 }
-
